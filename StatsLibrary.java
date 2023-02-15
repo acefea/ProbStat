@@ -3,7 +3,16 @@ import java.util.ArrayList;
 import java.lang.Math;
 public class StatsLibrary{
     //This project is responsible for processing common probability and statistics problems to aid in our homework assignments.
-    //Methods include mean, median, mode, intersection, union, compliment, standard deviation, and Monte Carlo.
+    //Methods include mean, median, mode, and standard deviation
+    //Union, intersection, complement of two ArrayLists<Double>
+    //Factorial, permutation and combinations calculator (using BigInteger from Java API)
+    //Monte Carlo problem (answer 2.20 on page 34 in comments) over 10,000 generations
+    //Birthday problem 
+    //Excel work from beginning of semester
+    //1 page (single spaced) about Github workflow
+    //Formula sheet (Word document)
+    //All work must be within the Github, submit the Github link on Blackboard.
+    //Optional EC: Word document labeled with extra credit considerations
 
     //This method solves for and returns the average (sum of elements divided by number of elements) of an inputted ArrayList of Integers.
     public double mean(ArrayList<Integer> input){
