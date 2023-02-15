@@ -4,15 +4,15 @@ public class TestStatsLibrary {
     public static void main(String[] args){
         StatsLibrary test = new StatsLibrary();
         ArrayList<Integer> numbers = new ArrayList<>();
-        numbers.add(1);
-        numbers.add(3);
-        numbers.add(5);
-        numbers.add(6);
-        numbers.add(9);
-        numbers.add(6);
-        numbers.add(2);
+        numbers.add(46);
+        numbers.add(69);
+        numbers.add(32);
+        numbers.add(60);
+        numbers.add(52);
+        numbers.add(41);
         System.out.println("Mean: "+test.mean(numbers));
         System.out.println("Median: "+test.median(numbers));
         System.out.println("Mode: "+test.mode(numbers));
+        System.out.println("Standard Deviation: "+test.standardDeviation(numbers));
     }
 }
