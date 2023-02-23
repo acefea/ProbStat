@@ -3,10 +3,10 @@ import java.util.ArrayList;
 import java.lang.Math;
 import java.math.BigInteger;
 public class StatsLibrary{
-    //This project is responsible for processing common probability and statistics problems to aid in our homework assignments.
+    //This project is responsible for processing common probability and statistics problems to aid in our homework assignments, and is due March 2nd before the first exam.
     //Methods include mean, median, mode, and standard deviation X
     //Union, intersection, complement of two ArrayLists<Integer> X
-    //Factorial, permutation and combinations calculator (using BigInteger from Java API) X
+    //Factorial, permutation, combinations, and binomial distribution calculator (using BigInteger from Java API) X
     //Monte Carlo problem (answer 2.20 on page 34 in comments) over 10,000 generations
     //Birthday problem 
     //Excel work from beginning of semester
@@ -110,6 +110,13 @@ public class StatsLibrary{
     public BigInteger combination(int n, int r){
         BigInteger c = factorial(n).divide(factorial(r).multiply(factorial(n-r)));
         return c;
+    }
+
+    //This method finds the binomial distribution of a given n (total trials), y (observed successes), p (rate of success), and q (rate of failure).
+    public double binomialDistribution(int n, int y, double p, double q){
+        double result = -1; //Default value in case binomial distribution is not possible.
+        result = combination(n,y).doubleValue() * Math.pow(p, y) * Math.pow(q, n-y);
+        return result;
     }
 
     //This method finds the union of two inputted ArrayLists of Integers, a and b.

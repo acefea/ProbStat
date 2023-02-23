@@ -40,5 +40,7 @@ public class TestStatsLibrary {
         System.out.println("Intersection of A and B: "+test.intersection(a,b));
         System.out.println("Complement of A: "+test.complement(a, s));
         System.out.println("Complement of B: "+test.complement(b, s));
+
+        System.out.println("Binomial Distribution: "+test.binomialDistribution(10, 7, 0.80, 0.20));
     }
 }
