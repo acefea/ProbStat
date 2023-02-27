@@ -7,8 +7,8 @@ public class StatsLibrary{
     //Methods include mean, median, mode, and standard deviation X
     //Union, intersection, complement of two ArrayLists<Integer> X
     //Factorial, permutation, combinations, and binomial distribution calculator (using BigInteger from Java API) X
-    //Monte Carlo problem (answer 2.20 on page 34 in comments) over 10,000 generations
-    //Birthday problem 
+    //Monte Carlo problem (answer 2.20 on page 34 in comments) over 10,000 generations X
+    //Birthday problem X
     //Excel work from beginning of semester
     //1 page (single spaced) about Github workflow
     //Formula sheet (Word document)

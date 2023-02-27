@@ -6,17 +6,51 @@ public class StatsExamples {
     //Monte Carlo problem (answer 2.20 on page 34 in comments) over 10,000 generations
     //Birthday problem 
 
-    //This method can determine the probability of 2 (randomly generated) people having the same birthday in a given group size over a given number of iterations.
+    //This method can determine the probability of 2 (randomly generated) people having the same birthday.
     public double birthdayProblem(){
-        double result = 0;
+        ArrayList<Person> people = new ArrayList<Person>();
+        double result = 1;
+        boolean flag = true;
+        Random r = new Random();
+        Person target = new Person(r.nextInt(365) + 1);
+        people.add(target);
+        //Generate people until a birthday matches. Then, probability is determined as 1/(number of people generated)
+        while(flag){
+            Person individual = new Person(r.nextInt(365) + 1);
+            people.add(individual);
+            if(individual.getBirthday()==target.getBirthday()){
+                flag = false;
+            }
+        }
+        result = (1.0/people.size()) * 100.0;
         return result;
     }
     
-    public ArrayList<Integer> montyHall(int runs){
-        ArrayList<Integer> results = new ArrayList<Integer>();
+    //This method can run the montyHall simulation over a given numeber of runs.
+    //Designed with some help from the discussion and code here: https://rosettacode.org/wiki/Monty_Hall_problem#Java
+    public void montyHall(int runs){
         int winsStay = 0;
         int winsSwitch = 0;
-        return results; 
+        Random r = new Random();
+        for(int i=0;i<runs;i++){
+            int[] doors = {0,0,0};
+            doors[r.nextInt(3)] = 1;
+            int choice = r.nextInt(3);
+            if(doors[choice]==1){
+                winsStay++;
+            }
+            if(doors[choice]==0)
+            {
+                winsSwitch++;
+            }
+        }
+        double probStay = (double)winsStay/runs;
+        double probSwitch = (double)winsSwitch/runs;
+        System.out.println("For "+runs+" runs, here are the results...");
+        System.out.println("Total wins with switching: "+winsSwitch);
+        System.out.println("Probability of winning with switching: "+probSwitch);
+        System.out.println("Total wins with staying: "+winsStay);
+        System.out.println("Probability of winning with staying: "+probStay);
     }
     
     /* PROBLEM 2.20 ON PAGE 34
