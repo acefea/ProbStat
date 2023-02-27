@@ -3,7 +3,6 @@ import java.util.ArrayList;
 public class TestStatsLibrary {
     public static void main(String[] args){
         StatsLibrary test = new StatsLibrary();
-        StatsExamples test2 = new StatsExamples();
         
         ArrayList<Double> numbers = new ArrayList<>(); //numbers = {46, 69, 32, 60, 52, 41}
         numbers.add(46.0);
@@ -43,9 +42,6 @@ public class TestStatsLibrary {
         System.out.println("Complement of B: "+test.complement(b, s));
 
         System.out.println("Binomial Distribution: "+test.binomialDistribution(10, 7, 0.80, 0.20));
-
-        System.out.println("Birthday Problem results: "+test2.birthdayProblem());
-
-        test2.montyHall(10000);
+        System.out.println("Geometric Distribution: "+test.geometricDistribution(5, 0.5, 0.5));
     }
 }

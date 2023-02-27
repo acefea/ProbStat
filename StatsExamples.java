@@ -2,9 +2,8 @@
 import java.util.ArrayList;
 import java.util.Random;
 public class StatsExamples {
-    //This project is responsible for the Monte Hall and Birthday problem examples, and is due March 2nd before the first exam.
-    //Monte Carlo problem (answer 2.20 on page 34 in comments) over 10,000 generations
-    //Birthday problem 
+    //This project is responsible for the Monty Hall and Birthday problem examples, and is due March 2nd before the first exam.
+    //Methods include: Birthday problem and Monty Hall problem (and answer to 2.20 on page 34 in comments)
 
     //This method can determine the probability of 2 (randomly generated) people having the same birthday.
     public double birthdayProblem(){

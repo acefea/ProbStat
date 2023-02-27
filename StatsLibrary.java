@@ -4,18 +4,9 @@ import java.lang.Math;
 import java.math.BigInteger;
 public class StatsLibrary{
     //This project is responsible for processing common probability and statistics problems to aid in our homework assignments, and is due March 2nd before the first exam.
-    //Methods include mean, median, mode, and standard deviation X
-    //Union, intersection, complement of two ArrayLists<Integer> X
-    //Factorial, permutation, combinations, and binomial distribution calculator (using BigInteger from Java API) X
-    //Monte Carlo problem (answer 2.20 on page 34 in comments) over 10,000 generations X
-    //Birthday problem X
-    //Excel work from beginning of semester
-    //1 page (single spaced) about Github workflow
-    //Formula sheet (Word document)
-    //All work must be within the Github, submit the Github link on Blackboard.
-    //Optional EC: Word document labeled with extra credit considerations
+    //Methods include: mean, median, mode, standard deviation, union, intersection, complement, factorial, permutation, combinations, binomial distribution calculator, and geometric distrubtion calculator
 
-    //This method solves for and returns the average (sum of elements divided by number of elements) of an inputted ArrayList of Doubles.
+    //This method solves for and returns the average (sum of elements divided by number of elements) of an inputted ArrayList of Doubles (input).
     public double mean(ArrayList<Double> input){
         double sum = 0; //Average will be 0 if inputted ArrayList is empty.
         for(double element:input){
@@ -24,7 +15,7 @@ public class StatsLibrary{
         return (sum/input.size());
     }
 
-    //This method solves for and returns the median (middle) of an inputted ArrayList of Doubles.
+    //This method solves for and returns the median (middle) of an inputted ArrayList of Doubles (input).
     public double median(ArrayList<Double> input){
         double median = 0;
         //If inputted array has an odd number of elements, there is a defined median.
@@ -39,7 +30,7 @@ public class StatsLibrary{
         return median;
     }
 
-    //This method finds the mode (most frequent element) of an inputted ArrayList of Doubles.
+    //This method finds the mode (most frequent element) of an inputted ArrayList of Doubles (input).
     //Note: Code mostly taken from this stackoverflow post: https://stackoverflow.com/a/36416334
     public double mode(ArrayList<Double> input){
         double mode = 0;
@@ -63,7 +54,7 @@ public class StatsLibrary{
         return mode;
     }
 
-    //This method finds the standard deviation of an ArrayList of Doubles.
+    //This method finds the standard deviation of an ArrayList of Doubles (input).
     public double standardDeviation(ArrayList<Double> input){
         double std = 0;
         double sum = 0;
@@ -90,7 +81,7 @@ public class StatsLibrary{
         return std;
     }
 
-    //This method finds the factorial of a given integer value
+    //This method finds the factorial of a given integer value (input).
     //Note: I was having issues with visibility, so I referenced the code here: https://javarevisited.blogspot.com/2015/08/how-to-calculate-large-factorials-using-BigInteger-Java-Example.html 
     public BigInteger factorial(int input){
         BigInteger result = BigInteger.valueOf(1);
@@ -100,13 +91,13 @@ public class StatsLibrary{
         return result;
     }    
 
-    //This method finds the permutation of a given selection and total
+    //This method finds the permutation of a given selection (n) and total (r).
     public BigInteger permutation(int n, int r){
         BigInteger p = factorial(n).divide(factorial(n-r));
         return p;
     }
 
-    //This method finds the combination of a given selection and total
+    //This method finds the combination of a given selection (n) and total (r).
     public BigInteger combination(int n, int r){
         BigInteger c = factorial(n).divide(factorial(r).multiply(factorial(n-r)));
         return c;
@@ -114,8 +105,15 @@ public class StatsLibrary{
 
     //This method finds the binomial distribution of a given n (total trials), y (observed successes), p (rate of success), and q (rate of failure).
     public double binomialDistribution(int n, int y, double p, double q){
-        double result = -1; //Default value in case binomial distribution is not possible.
+        double result = 0;
         result = combination(n,y).doubleValue() * Math.pow(p, y) * Math.pow(q, n-y);
+        return result;
+    }
+
+    //This method finds the geometric distrubtion of a given y (total trials), p (rate of success), and q (rate of failure).
+    public double geometricDistribution(int y, double p, double q){
+        double result = 0;
+        result = Math.pow(q,(y-1)) * p;
         return result;
     }
 
@@ -135,7 +133,7 @@ public class StatsLibrary{
         return result;
     }
 
-    //This method finds the intersection of two inputted ArrayLists of Integers, a and b, in sample space s.
+    //This method finds the intersection of two inputted ArrayLists of Integers, a and b.
     public ArrayList<Integer> intersection(ArrayList<Integer> a, ArrayList<Integer> b){
         ArrayList<Integer> result = new ArrayList<Integer>();
         for(int i=0;i<a.size();i++){
