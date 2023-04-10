@@ -5,6 +5,11 @@ import java.math.BigInteger;
 public class StatsLibrary{
     //This project is responsible for processing common probability and statistics problems to aid in our homework assignments, and is due March 2nd before the first exam.
     //Methods include: mean, median, mode, standard deviation, union, intersection, complement, factorial, permutation, combinations, binomial distribution calculator, and geometric distrubtion calculator
+    
+    //This project has expanded for the final iteration, due April 27th before the final exam. Continue further down.
+    //Methods include: hypergeometric distribution, Tchebysheff's theorem, Poisson distribution, uniform distribution, etc.
+
+    //MIDTERM REQUIREMENTS BEGIN
 
     //This method solves for and returns the average (sum of elements divided by number of elements) of an inputted ArrayList of Doubles (input).
     public double mean(ArrayList<Double> input){
@@ -155,6 +160,38 @@ public class StatsLibrary{
                 result.remove(a.get(i));
             }
         }
+        return result;
+    }
+
+    //MIDTERM REQUIREMENTS END
+    //FINAL PROJECT REQUIREMENTS BEGIN
+
+    //This method finds the hypergeometric distribution of a given r (available type 1 selections), y (desired type 1 selections), n (total desired selections), total (total possible selections)
+    public double hypergeometricDistribution(int r, int y, int n, int total){
+        double result = 0;
+        result = (combination(r,y).doubleValue()) * (combination(total-r,n-y).doubleValue()) / (combination(total,n).doubleValue());
+        return result;
+    }
+
+    //This method finds the percent of values that lie within a given range from a (lower bound), to b (upper bound), with mean (average value) and std (standard deviation).
+    public double tchebysheffsTheorem(int a, int b, int mean, int std){
+        double result = 0;
+        int range = b-a;
+        double k = range/std;
+        if(k>1){
+            result = 1 - (1/(Math.pow(k,2)));
+        }
+        else{
+            result = 1 / (Math.pow(k,2));
+        }
+        return result;
+    }
+
+    //This method finds the Poisson distribution given l (rate of success) and y (desired number of failures)
+    public double poissonDistribution(int l, int y){
+        double result = 0;
+        double e = 2.718;
+        result = ((Math.pow(l,y)) / (factorial(y).doubleValue())) * (Math.pow(e,-l));
         return result;
     }
 }
