@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class TestGraphs {
     public static void main(String[] args){
+        //Main program designed to test GraphNoLib methods. Allows user to input their own lower bounds, upper bounds, and interval for the quadratic function, and creates a CSV with results ('output.csv').
         GraphNoLib test = new GraphNoLib();
         Scanner input = new Scanner(System.in);
         System.out.println("Please provide integers only!");

@@ -2,8 +2,8 @@
 import java.io.*;
 
 public class GraphNoLib{
-
-    //Plots quadratic formula points according to user input bounds and interval and writes it to a CSV file output
+    //This class is designed to handle plotting points in a quadratic formula, then salt and smooth these points.
+    //Plots quadratic formula points according to user input bounds and interval and writes it to a CSV file output.
     public void quadratic(int lower, int upper, int interval){
         try{
             FileWriter fw = new FileWriter("output.csv");
